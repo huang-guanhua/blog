@@ -2,6 +2,7 @@
   <div class="footer">
     <div class="footer-content">
       <div><a href="https://github.com/">GitHub</a></div>
+      <div><a href="https://github.com/">home</a></div>
     </div>
   </div>
 </template>
