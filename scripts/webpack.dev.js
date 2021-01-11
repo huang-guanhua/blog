@@ -11,7 +11,7 @@ process.env.NODE_ENV = 'development';
 module.exports = merge(base, {
   mode: 'development',
   output: {
-    path: path.resolve(process.cwd(), 'dist'),
+    path: path.resolve(process.cwd(), 'blog'),
     filename: '[name].js'
   },
   plugins: [

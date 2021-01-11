@@ -10,7 +10,7 @@ module.exports = merge(base, {
   mode: 'production',
 
   output: {
-    path: path.resolve(process.cwd(), 'dist'),
+    path: path.resolve(process.cwd(), 'blog'),
     filename: '[name]_[chunkhash:8].js',
     // publicPath: '/assets/'
   },
