@@ -12,22 +12,28 @@ module.exports = merge(base, {
   mode: 'development',
   output: {
     path: path.resolve(process.cwd(), 'blog'),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   plugins: [
     
   ],
   devServer: {
+    publicPath: '/blog/',
     // contentBase: path.join(process.cwd(), "public"),
     compress: true,
     port: 8000,
-    historyApiFallback: true, // 处理使用history模式单页面应用路由，页面404问题
+    // historyApiFallback: true, // 处理使用history模式单页面应用路由，页面404问题
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/blog/, to: '/blog/index.html' },
+      ]
+    },
     // inline: true,
     disableHostCheck: true,
     hot: true,
     host: '0.0.0.0',
     // https: true,
-    // useLocalIp: true
+    // useLocalIp: true 
     after: function(app, server, compiler) {
       function getLocalIP() {
         const netInfo = os.networkInterfaces(); //网络信息

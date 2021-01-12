@@ -5,6 +5,7 @@ import About from '../pages/about';
 
 export default {
   mode: 'history',
+  base: '/blog/',
   routes: [
     {path: '/', redirect: '/home'},
     {path: '/home', name: 'home', component: Home},

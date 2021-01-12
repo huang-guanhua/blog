@@ -1,6 +1,6 @@
 import request from './axios';
 
-const host = 'http://localhost:8080'
+const host = 'http://47.103.199.247'
 // const host = ''
 
 const login = `${host}/api/login`;
