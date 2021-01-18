@@ -1,6 +1,6 @@
 import request from './axios';
 
-const host = 'http://47.103.199.247'
+const host = 'https://huangguanhua.cn'
 // const host = ''
 
 const login = `${host}/api/login`;
