@@ -3,6 +3,7 @@
     <div class="footer-content">
       <div><a href="https://github.com/">GitHub</a></div>
       <div><a href="https://es6.ruanyifeng.com/">es6</a></div>
+      <div><a href="https://beian.miit.gov.cn">桂ICP备2021000407号-1</a></div>
     </div>
   </div>
 </template>
