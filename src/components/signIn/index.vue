@@ -15,8 +15,10 @@
 
 <script>
 import {getlogin} from '../../service/home';
+import jsCookie from 'js-cookie';
 export default {
   name: 'signIn',
+  props: ['login'],
   data(){
     return {
       account: '',
@@ -36,7 +38,16 @@ export default {
     show(){
       this.isShow = true;
     },
-    signInUserAction(){
+    signInUserAction(token){
+      if(token){
+        getlogin().then(res => {
+          if(res.auth === 1){
+            this.$emit('userlogin', {login: true, userName: res.user});
+            this.isShow = false
+          }
+        })
+        return;
+      }
       const {account, password} = this;
       if(account && password){
         getlogin({account,password}).then(res => {
@@ -53,6 +64,12 @@ export default {
       
     }
   },
+  created(){
+    const auth = jsCookie.get('auth');
+    if(auth && !this.login){
+      this.signInUserAction(auth)
+    }
+  }
 }
 </script>
 

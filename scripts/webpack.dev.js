@@ -78,12 +78,12 @@ module.exports = merge(base, {
       console.log('\033[40;90mi [log]' + '\033[40;37m: Project is running at ' + 'http://localhost:' + server.options.port + '/ or http://' + getLocalIP() + ":" + server.options.port + '/\033[0m');
     },
     proxy: {
-      // "/api": {
-      //   target: "http://127.0.0.1:8080", // https://www.v2ex.com/api/topics/hot.json
-      //   changeOrigin: true,
-      //   secure: false,
-      //   // pathRewrite: {"^/api" : ""}
-      // }
+      "/api": {
+        target: "http://127.0.0.1:8080", // https://www.v2ex.com/api/topics/hot.json
+        changeOrigin: true,
+        secure: false,
+        // pathRewrite: {"^/api" : ""}
+      }
     }
   },
   stats: 'errors-only',

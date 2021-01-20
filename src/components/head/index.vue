@@ -27,7 +27,7 @@
         <el-button plain size="small" @click="regShow">注册</el-button>
       </div>
     </div>
-    <SignIn ref="signIn" @userlogin="userlogin"></SignIn>
+    <SignIn ref="signIn" @userlogin="userlogin" :login="login"></SignIn>
     <Register ref="register"></Register>
   </div>
 </template>
@@ -36,6 +36,7 @@
 import logo from '../../../public/logo.png';
 import SignIn from '../../components/signIn';
 import Register from '../../components/register';
+import jsCookie from 'js-cookie';
 export default {
   name: 'com-head',
   components: {
@@ -76,7 +77,8 @@ export default {
     handleCommand(idx){
       if(idx === 'out'){
         this.login = false,
-        this.userName = ''
+        this.userName = '',
+        jsCookie.remove('auth')
       }else {
         this.$message.info('other 暂无操作');
       }
@@ -84,7 +86,7 @@ export default {
 
   },
   created(){
-    console.log(this, 't-')
+    console.log(this, 'head this')
   }
 }
 </script>

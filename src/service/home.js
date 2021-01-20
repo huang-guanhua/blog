@@ -1,7 +1,7 @@
 import request from './axios';
 
-const host = 'https://huangguanhua.cn'
-// const host = ''
+// const host = 'https://huangguanhua.cn'
+const host = ''
 
 const login = `${host}/api/login`;
 const register = `${host}/api/register`;
