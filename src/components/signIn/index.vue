@@ -39,15 +39,7 @@ export default {
       this.isShow = true;
     },
     signInUserAction(token){
-      if(token){
-        getlogin().then(res => {
-          if(res.auth === 1){
-            this.$emit('userlogin', {login: true, userName: res.user});
-            this.isShow = false
-          }
-        })
-        return;
-      }
+      console.log(token, 'token=')
       const {account, password} = this;
       if(account && password){
         getlogin({account,password}).then(res => {
@@ -65,9 +57,14 @@ export default {
     }
   },
   created(){
-    const auth = jsCookie.get('auth');
-    if(auth && !this.login){
-      this.signInUserAction(auth)
+    const token = jsCookie.get('auth');
+    if(token && !this.login){
+      getlogin().then(res => {
+        if(res.auth === 1){
+          this.$emit('userlogin', {login: true, userName: res.user});
+          this.isShow = false
+        }
+      })
     }
   }
 }
