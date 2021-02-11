@@ -86,7 +86,7 @@ export default {
 
   },
   created(){
-    console.log(this, 'head this')
+    // console.log(this, 'head this')
   }
 }
 </script>

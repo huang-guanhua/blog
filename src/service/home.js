@@ -7,6 +7,7 @@ const login = `${host}/api/login`;
 const register = `${host}/api/register`;
 const list = `${host}/api/list`;
 const menu = `${host}/api/menu/list`;
+const sendEmail = `${host}/api/email`;
 
 export const getAction = () => {
   return request('/api/topics/hot.json').then(res => {
@@ -49,5 +50,13 @@ export const getmenuList = (params) => {
     method: 'get',
     url: menu,
     params
+  })
+}
+
+export const getSendEmail = (params) => {
+  return request({
+    method: 'post',
+    url: sendEmail,
+    data: params
   })
 }
